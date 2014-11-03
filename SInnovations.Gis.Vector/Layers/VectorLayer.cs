@@ -7,6 +7,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Spatial;
 using System.Data.Entity.SqlServer;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -142,6 +143,11 @@ namespace SInnovations.Gis.Vector.Layers
                 Layer.AddRange(obj.ToObject<T[]>(JsonSerializer.Create(settings)));
             else
                 Layer.Add(obj.ToObject<T>(JsonSerializer.Create(settings)));
+        }
+
+        public PropertyInfo[] GetProperties()
+        {
+            return typeof(T).GetProperties();
         }
       
     }
