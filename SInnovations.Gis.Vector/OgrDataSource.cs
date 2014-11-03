@@ -3,6 +3,7 @@ using SInnovations.Gis.Vector.Layers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,6 +70,11 @@ namespace SInnovations.Gis.Vector
         }
 
         public void Add(Newtonsoft.Json.Linq.JToken obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public PropertyInfo[] GetProperties()
         {
             throw new NotImplementedException();
         }
